@@ -1,6 +1,6 @@
 package com.asaas.config
 
-class ConfigUtil {
+class AsaasConfigUtil {
 
     private String configName;
 
