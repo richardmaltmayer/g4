@@ -1,12 +1,20 @@
-package web
+package com.asaas.interceptor
 
-class TestFilters {
+class TestInterceptor implements BaseInterceptor {
 
-    def filters = {
-        all(controller: '*', action: '*') {
-            before = {
-                return true
-            }
-        }
+    TestInterceptor() {
+        match(controller: '*', action: '*')
     }
+
+    @Override
+    Integer getInterceptorOrder() {
+        return DEFAULT_PRECEDENCE_ORDER
+    }
+
+    @Override
+    boolean before() {
+        return true
+    }
+
 }
+
