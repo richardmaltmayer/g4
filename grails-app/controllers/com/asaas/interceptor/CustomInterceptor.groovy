@@ -1,21 +1,14 @@
-package com.asaas.interceptor
+package web
 
-class CustomInterceptor implements BaseInterceptor {
+class CustomFilters {
 
-    CustomInterceptor() {
-        match(controller: 'custom', action: '*')
+    def filters = {
+        all(controller: 'custom', action: '*') {
+            before = {
+                println controllerName + " / " + actionName
+                println "teste de sobrescrita"
+                return true
+            }
+        }
     }
-
-    @Override
-    Integer getInterceptorOrder() {
-        return DEFAULT_PRECEDENCE_ORDER
-    }
-
-    @Override
-    boolean before() {
-        println controllerName + " / " + actionName
-        return true
-    }
-
 }
-
