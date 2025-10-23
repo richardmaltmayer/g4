@@ -8,6 +8,10 @@ package com.asaas.interceptor
         return DEFAULT_PRECEDENCE_ORDER
     }
 
+    Integer getInterceptorOrder() {
+        return DEFAULT_PRECEDENCE_ORDER
+    }
+
     TestInterceptor() {
         match(controller: '*', action: '*')
     }
